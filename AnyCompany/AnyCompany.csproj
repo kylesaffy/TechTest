@@ -48,7 +48,7 @@
     <Compile Include="Order.cs" />
     <Compile Include="OrderRepository.cs" />
     <Compile Include="OrderService.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="OrderServiceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

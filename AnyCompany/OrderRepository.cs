@@ -7,7 +7,10 @@ namespace AnyCompany
     internal class OrderRepository
     {
         private static string ConnectionString = @"Data Source=(local);Database=Orders;User Id=admin;Password=password;";
-
+        /// <summary>
+        /// Saves an order object
+        /// </summary>
+        /// <param name="order">Order object to be saved</param>
         public void Save(Order order)
         {
             SqlConnection connection = new SqlConnection(ConnectionString);
@@ -23,6 +26,11 @@ namespace AnyCompany
 
             connection.Close();
         }
+        /// <summary>
+        /// Orders associated to a client ID
+        /// </summary>
+        /// <param name="customerId">Client ID linked to orders required</param>
+        /// <returns>List of Order objects associated with a Client ID</returns>
         public List<Order> GetOrders(int customerId)
         {
             SqlConnection connection = new SqlConnection(ConnectionString);

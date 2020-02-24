@@ -7,7 +7,11 @@ namespace AnyCompany
     public static class CustomerRepository
     {
         private static string ConnectionString = @"Data Source=(local);Database=Customers;User Id=admin;Password=password;";
-
+        /// <summary>
+        /// Client object retrieval
+        /// </summary>
+        /// <param name="customerId">Customer ID being queried</param>
+        /// <returns>Client object as per specified ID</returns>
         public static Customer Load(int customerId)
         {
             Customer customer = new Customer();
@@ -30,6 +34,10 @@ namespace AnyCompany
 
             return customer;
         }
+        /// <summary>
+        /// Client List with Orders
+        /// </summary>
+        /// <returns>A List of all client objects and their accosiated orders</returns>
         public static List<Customer> AllClients()
         {
             OrderRepository orderRepository = new OrderRepository();
